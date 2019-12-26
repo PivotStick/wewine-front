@@ -1,0 +1,9 @@
+.app {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+
+    height: 100vh;
+}
+
+@import "./components/Header/Header";
+@import "./components/Main/Main";

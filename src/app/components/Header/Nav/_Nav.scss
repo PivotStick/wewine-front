@@ -1,0 +1,53 @@
+.nav {
+    position: relative;
+    
+    width: 80%;
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    &__logo {
+        position: absolute;
+
+        top: 50%;
+        left: 0;
+
+        opacity: 0;
+
+        transform: translate(-145%, -50%);
+        
+        .--svgBottle {
+
+            height: 3rem;
+
+            .cls-1 {
+                fill: $wewine1;
+            }
+
+            .cls-2 {
+                fill: $wewine2;
+            }
+
+            .cls-3 {
+                fill: $wewine3;
+            }
+        }
+    }
+
+    &__underline {
+        position: absolute;
+        content: "";
+
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        height: 2px;
+        width: 100%;
+
+        background-color: $wewine2;
+    }
+}
+
+@import "./Tab/Tab";
