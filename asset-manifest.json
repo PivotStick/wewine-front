@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/wewine-front/static/css/main.fb7ad05d.chunk.css",
+    "main.js": "/wewine-front/static/js/main.d44b2a29.chunk.js",
+    "main.js.map": "/wewine-front/static/js/main.d44b2a29.chunk.js.map",
+    "runtime-main.js": "/wewine-front/static/js/runtime-main.87661dcf.js",
+    "runtime-main.js.map": "/wewine-front/static/js/runtime-main.87661dcf.js.map",
+    "static/js/2.d46de5a7.chunk.js": "/wewine-front/static/js/2.d46de5a7.chunk.js",
+    "static/js/2.d46de5a7.chunk.js.map": "/wewine-front/static/js/2.d46de5a7.chunk.js.map",
+    "index.html": "/wewine-front/index.html",
+    "precache-manifest.fa10deaeb045f8aaa19cfa1b3c959d79.js": "/wewine-front/precache-manifest.fa10deaeb045f8aaa19cfa1b3c959d79.js",
+    "service-worker.js": "/wewine-front/service-worker.js",
+    "static/css/main.fb7ad05d.chunk.css.map": "/wewine-front/static/css/main.fb7ad05d.chunk.css.map",
+    "static/js/2.d46de5a7.chunk.js.LICENSE": "/wewine-front/static/js/2.d46de5a7.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.87661dcf.js",
+    "static/js/2.d46de5a7.chunk.js",
+    "static/css/main.fb7ad05d.chunk.css",
+    "static/js/main.d44b2a29.chunk.js"
+  ]
+}
