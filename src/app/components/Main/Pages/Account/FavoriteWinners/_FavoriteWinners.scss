@@ -1,0 +1,178 @@
+.winers {
+    position: absolute;
+    width: 100vw;
+  
+    h1, h2 {
+        letter-spacing: 2px;
+        text-align: center;
+        
+    }
+
+    h1 {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+  
+    h2 {
+      color: #632624;
+      margin: 0 auto 20px !important;
+      font-size: 1.8rem;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  
+    &_grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 34;
+      grid-gap: 30px;
+      -webkit-border-radius: 34;
+      -moz-border-radius: 34;
+      -ms-border-radius: 34;
+      -o-border-radius: 34;
+    }
+  }
+  
+  .img_profil {
+    &_left,
+    &_right {
+      width: 90px;
+      border-radius: 50px;
+      position: absolute;
+      top: 50%;
+      margin-top: -45px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+    }
+    &_right {
+      right: -45px;
+    }
+    &_left {
+      left: -45px;
+    }
+  }
+  
+  .winer {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+
+    height: 19rem;
+  
+    &_bottle {
+      font-weight: 500;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+  
+    &_bottlecommun {
+      font-style: italic;
+      opacity: 0.5;
+      margin: 0;
+    }
+  
+    .button {
+      width: 222px;
+    }
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .winers {
+      .container {
+        padding: 2em 4em;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    .winer {
+      &_bottle {
+        font-size: 1rem;
+      }
+      &_bottlecommun {
+        font-size: 0.8rem;
+      }
+
+      .button {
+        font-size: 0.7rem;
+        width: 184px;
+        height: 30px;
+      }
+    }
+
+    .img_profil {
+      &_left,
+      &_right {
+        width: 76px;
+      }
+      &_left {
+        left: -38px;
+      }
+      &_right {
+        right: -38px;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .winers {
+      &_grid {
+        grid-gap: 15px;
+      }
+      .container {
+        padding: 2em 3em;
+      }
+    }
+    .winer {
+      padding: 20px;
+    }
+    .img_profil {
+      &_left,
+      &_right {
+        width: 60px;
+        margin-top: -30px;
+      }
+      &_right {
+        right: -30px;
+      }
+      &_left {
+        left: -30px;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 558px) {
+    .winers {
+      .container {
+        padding: 2em 1em;
+      }
+      &_grid {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+    .winer {
+      margin: 30px auto;
+      padding: 45px 15px 20px;
+    }
+    .img_profil {
+      &_left,
+      &_right {
+        width: 76px;
+        left: 50%;
+        margin-left: -38px;
+        top: 0;
+        margin-top: -38px;
+      }
+    }
+  }
+  
+@import "Winer";

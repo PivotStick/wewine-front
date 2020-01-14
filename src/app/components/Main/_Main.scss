@@ -4,7 +4,7 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding-top: 2rem;
+    // padding-top: 2rem;
 
     &.--not-scrollable {
         overflow: hidden;
@@ -18,14 +18,11 @@
         letter-spacing: 1px;
         line-height: 1.75rem;
     }
-    section {
-        padding: 4rem;
-    }
 }
 
 @import "./SearchTab/SearchTab";
-
 @import "./Pages/Account/Account";
 @import "./Pages/Cave/Cave";
 @import "./Pages/Home/Home";
 @import "./Pages/Shop/Shop";
+

@@ -1,0 +1,92 @@
+.account-landing-page {
+    position: relative;
+
+    height: 100%;
+    
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+        
+        height: 100%;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+
+        padding: 1rem 2rem;
+        margin: 0.5rem 0;
+
+        width: 50%;
+
+        .--icon {
+            cursor: pointer;
+
+            z-index: 1;
+            width: 10rem;
+            padding: 1.25rem;
+
+            fill: $wewine3;
+            stroke: $wewine3;
+
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 0 10px rgba($color: #000000, $alpha: .2);
+            border: 1px solid $wewine3;
+
+            #premium {
+                stroke-width: .3rem;
+            }
+
+            #personalInfos {
+                transform: translateX(15%);
+            }
+
+            #favoriteWinners {
+                transform: translateY(15%);
+            }
+        }
+
+        .--text {
+            cursor: pointer;
+            color: $wewine3;
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            width: 100%;
+            height: 4.5rem;
+            padding: 1.25rem 0;
+            padding-left: 4rem;
+
+            border-radius: 0 4rem 4rem 0;
+
+            transform: translateX(-10%);
+            background-color: white;
+
+            box-shadow: 0 0 10px rgba($color: #000000, $alpha: .2);
+            border: 1px solid $wewine3;
+
+            &:hover {
+                font-weight: 600;
+                color: $wewine2;
+            }
+        }
+
+
+    }
+}

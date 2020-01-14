@@ -1,0 +1,63 @@
+.cave-card {
+    background-color: $wewine3;
+    padding: 1rem 1rem 0 1rem;
+    margin: 1rem 1rem 0 1rem;
+
+    border-radius: 25px;
+
+    .--delete{
+        cursor: pointer;
+        border-radius: 0px;
+        height: 30px;
+        fill: $wewine1;
+
+        path{
+            height: 100%;
+        }
+
+    }
+
+
+    .--header{
+        padding: 0px;
+        margin: 0px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+        text-align: center;
+        color: $wewine1;
+    } 
+
+    &__footer {
+        cursor: pointer;
+
+        margin: 1rem;
+
+        transform: translateX(-20%);
+        background-color: $wewine2;
+        height: 65%;
+
+        padding: .5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 25px;
+
+        .--icon{
+            border-radius: 0px;
+            height: 50px !important;
+            fill: $wewine1;
+
+            path{
+                height: 100%;
+            }
+
+        }
+
+        .--text {
+            color: $wewine1;
+        }
+    }
+}

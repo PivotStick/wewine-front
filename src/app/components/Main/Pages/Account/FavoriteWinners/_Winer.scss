@@ -1,0 +1,153 @@
+
+.d-flex {
+  display: flex;
+}
+
+.j-cont-center {
+  justify-content: center;
+}
+
+.a-item-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.container {
+  padding: 4em 6em;
+  margin: auto;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  color: #d0b0af;
+  margin: 110px auto 90px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    border: #632624 solid 3px;
+    border-left-width: 0;
+    border-right-width: 0;
+    height: 3px;
+    z-index: -1;
+  }
+
+  span {
+    background: #632624;
+    padding: 17px 30px;
+    border-radius: 35px;
+  }
+}
+
+hr {
+  border: none;
+  border-top: 12px double #632624;
+  height: 4px;
+  margin-left: 0;
+  //width: 160px;
+}
+
+.button {
+  height: 40px;
+  width: 176px;
+  border-radius: 40px;
+  background-color: #9b4843;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 3px;
+  border: none;
+  font-size: 1em;
+  margin-top: 10px;
+  overflow: hidden;
+  transition: 0.2s all ease-in-out;
+  box-shadow: 6px 4px 9px #80808070;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button_light {
+  height: 40px;
+  width: 176px;
+  border-radius: 40px;
+  background-color: #632624;
+  text-transform: uppercase;
+  color: #d0b0af;
+  font-weight: 600;
+  letter-spacing: 3px;
+  border: none;
+  font-size: 1em;
+  margin-top: 10px;
+  overflow: hidden;
+  transition: 0.2s all ease-in-out;
+  box-shadow: 6px 4px 9px rgba(128, 128, 128, 0.09);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.p {
+  font-size: 0.9rem;
+  font-weight: lighter;
+}
+
+.full_star,
+.empty_star {
+  width: 27px;
+  fill: #efce4a;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 991px) {
+  .container {
+    padding: 2em 2em;
+  }
+  .h2 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .container {
+    padding: 2em 1.5em;
+  }
+  .h2 {
+    font-size: 0.6rem;
+    margin: 55px auto 20px;
+
+    span {
+      padding: 12px 19px;
+    }
+    &:before {
+      top: 5%;
+      left: 0%;
+      width: 100%;
+    }
+  }
+}

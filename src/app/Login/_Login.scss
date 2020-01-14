@@ -1,0 +1,102 @@
+.login-page {
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__card {
+        padding: 2rem 8rem;
+        border-radius: 1rem;        
+        
+        background-color: rgba(white, 0.5);
+        box-shadow: 5px 5px 50px black;
+
+        width: 50%;
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        font-weight: 100;
+        color: $wewine3;
+    }
+
+    &__form {        
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        input, button {
+            border: none;
+            
+            margin: 1rem 0;
+            padding: .5rem 0;
+        }
+        
+        input {
+            background: none;
+            border-bottom: 1px solid $wewine3;
+            width: 100%;
+        }
+        
+        button {
+            cursor: pointer;
+
+            margin-top: 4rem;
+            border-radius: 1rem;
+
+            width: 14rem;
+
+            background-color: $wewine3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white;
+        }
+    }
+
+    &__footer {
+        width: 45%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: white;
+
+        span {
+            margin-right: 1rem;
+        }
+
+        a {
+            color: white;
+
+            &:hover {
+                color: $wewine2;
+                text-decoration: underline;
+            }
+        }
+        
+
+        &::before {
+            content: "";
+
+            display: block;
+
+            height: 2px;
+            width: 100%;
+
+            border-radius: 1rem;
+            background-color: white;
+
+            margin: 2rem 0;
+        }
+    }
+}
+
+

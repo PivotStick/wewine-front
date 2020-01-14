@@ -1,3 +1,29 @@
 .account-tab {
     position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+
+    width: 100%;
+    height: 100%;
+    
+    &__bg {
+
+        position: absolute;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        background: url('./assets/fondHistorique.jpg') no-repeat center;
+        background-size: cover;
+        filter: blur(10px) brightness(75%);
+        transform: scale(1.1);
+
+    }
+
 }
+
+@import "./LandingPage/LandingPage";
+@import "./Premium/Premium";
+@import "./FavoriteWinners/FavoriteWinners";
+@import "./PersonalInfos/PersonalInfos";

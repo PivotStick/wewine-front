@@ -45,9 +45,9 @@ const Main = () => {
             <AnimatePresence>
                 <Switch location={location} key={location.pathname}>
                     <Route exact path="/home" component={Home} />
-                    <Route exact path="/shop" component={Shop} />} />
-                    <Route exact path="/cave" component={Cave} />} />
-                    <Route exact path="/account" component={Account} />} />
+                    <Route exact path="/shop" component={Shop} />
+                    <Route exact path="/cave" component={Cave} />
+                    <Route exact path="/account" component={Account} />
                 </Switch>
             </AnimatePresence>
             <Redirect from="/" to="/home" />
