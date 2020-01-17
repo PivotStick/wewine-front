@@ -39,6 +39,15 @@ const Cave = () => {
                 setCellars(cellars);
             })
     }
+
+    // quand l'utilisateur n'a pas de cave
+    const displayMessage = () => {
+        if (cellars.length === 0) {
+            return(
+                <CardCave cellar={{name: "changer ce titre", maxContent: 46}} changeTab={setCurrentTab} getCellar={getCellar} />
+            );
+        }
+    }
  
     useEffect(getCellar, []);
 
@@ -55,7 +64,9 @@ const Cave = () => {
             <div className="cave-tab__content">
 
                 <h1 className="cave-tab__content__h1">CAVE</h1>
-                {cellars.map(cellar => <CardCave key={cellar._id} cellar={cellar} changeTab={setCurrentTab} />)}
+                {cellars.map(cellar => <CardCave key={cellar._id} cellar={cellar} changeTab={setCurrentTab} getCellar={getCellar} />)}
+                   
+                {displayMessage()}
             </div>
 
         </motion.section>
