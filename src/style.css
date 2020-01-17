@@ -37,6 +37,44 @@ body {
           transform: scale(1.1);
 }
 
+.loading-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1000;
+  background-color: white;
+  -webkit-box-shadow: 0 -10rem 0 10rem white;
+          box-shadow: 0 -10rem 0 10rem white;
+}
+
+.loading-page .--svgBottle {
+  width: 60%;
+  fill: #632624;
+}
+
+.loading-page .--svgBottle .cls-1 {
+  fill: #D0B0AF;
+}
+
+.loading-page .--svgBottle .cls-2 {
+  fill: #9B4843;
+}
+
+.loading-page .--svgBottle .cls-3 {
+  fill: #632624;
+}
+
 .landing-page {
   height: 100%;
   display: -webkit-box;
@@ -140,6 +178,7 @@ body {
 }
 
 .login-page__form {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,6 +212,16 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: white;
+}
+
+.login-page__form .--viewPassword {
+  cursor: pointer;
+  position: absolute;
+  top: 9.75rem;
+  right: 0;
+  padding: .75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .login-page__footer {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { motion } from "framer-motion";
 import { pageTransition } from "../pageTransition";
@@ -8,17 +8,40 @@ import InsideCave from "./InsideCave/InsideCave";
 
 const Cave = () => {
 
-    const [currentTab, setCurrentTab] = useState("")
+    const [currentTab, setCurrentTab] = useState("");
+    const [cellars, setCellars] = useState([]);
 
-    const displayContent = (tab) => {
-        switch (tab) {
-            case "cardCave":
-                return <InsideCave changeTab={setCurrentTab}/>;
+    // const displayContent = (tab, cellar) => {
+    //     switch (tab) {
+    //         case "cardCave":
+    //             return <InsideCave changeTab={setCurrentTab}/>;
         
-            default:
-                return <CardCave changeTab={setCurrentTab} /> ;
-        }
+    //         default:
+    //             return <CardCave changeTab={setCurrentTab} data={cellar} /> ;
+    //     }
+    // };
+    
+
+    const getCellar = () => {
+    
+            fetch('http://127.0.0.1:8000/cellars', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + localStorage.getItem('userToken')
+                }
+            })
+            .then(res => {
+                return res.json();
+            })
+            .then(cellars => {
+                console.log(cellars);
+                setCellars(cellars);
+            })
     }
+ 
+    useEffect(getCellar, []);
+
 
     return (
         <motion.section
@@ -32,7 +55,7 @@ const Cave = () => {
             <div className="cave-tab__content">
 
                 <h1 className="cave-tab__content__h1">CAVE</h1>
-                {displayContent(currentTab)}
+                {cellars.map(cellar => <CardCave key={cellar._id} cellar={cellar} changeTab={setCurrentTab} />)}
             </div>
 
         </motion.section>

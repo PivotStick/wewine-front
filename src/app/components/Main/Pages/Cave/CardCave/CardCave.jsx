@@ -1,14 +1,15 @@
 import React from 'react';
 
-const CardCave = ({ changeTab }) => {
-    
+const CardCave = ({ changeTab, cellar }) => {
+
+
     return(
         <div className="cave-card">
             <svg className="cave-card --delete" viewBox="0 0 47.971 47.971">
                 <path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88   c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242   C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879   s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"></path>
             </svg>
-            <h2 className="cave-card --header">Nom de la cave</h2>
-            <p className="cave-card --content">Nombres de bouteilles (46 maximum)</p>
+            <h2 className="cave-card --header">{cellar.name} </h2>
+            <p className="cave-card --content">Nombres de bouteilles ({cellar.maxContent} maximum)</p>
 
             <div className="cave-card__footer" onClick={() => changeTab("cardCave")}>
                 <svg className="cave-card__footer --icon" viewBox="-27 0 512 512" >

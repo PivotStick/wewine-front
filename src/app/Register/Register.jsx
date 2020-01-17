@@ -1,43 +1,44 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import { UserContext } from "../components/Contexts/UserContext";
+import { UserContext} from "../components/Contexts/UserContext";
 
 const Register = () => {
+    
+    const {setIsConnected} = useContext(UserContext);
 
-    const { setIsConnected, setFirstname, setLastname, setMail } = useContext(UserContext);
-
-    const [firstnameValue, setFirstnameValue] = useState("");
-    const [lastnameValue, setLastnameValue] = useState("");
+    const [isPwVisible, setIsPwVisible] = useState(false);
+    const [usernameValue, setUsernameValue] = useState("");
     const [mailValue, setMailValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
-    const [passwordConfirmValue, setPasswordConfirmValue] = useState("");
+    //const [passwordConfirmValue, setPasswordConfirmValue] = useState("");
 
-
-    function registerToSymfony(e) {
+    function registerToNode(e) {
         e.preventDefault();
 
-        fetch('http://127.0.0.1:8000/api/register', {
+        fetch('http://127.0.0.1:8000/users/register', {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(
                 {
-                    firstname: firstnameValue,
-                    lastname: lastnameValue,
+                    username: usernameValue,
                     mail: mailValue,
                     password: passwordValue,
-                    confirm: passwordConfirmValue
+                    // confirm: passwordConfirmValue
                 }
             )
         })
-        .then(res => res.json())
+        .then(res => {
+            return res.json();
+        })
         .then(data => {
-            if (!data.error) {
+            if (data.token) {
+                sessionStorage.setItem('userToken', data.token);
                 setIsConnected(true);
-                setLastname(data.userInfos.lastname);
-                setFirstname(data.userInfos.firstname);
-                setMail(data.userInfos.mail);
             }
-            console.log(data);
+            console.log(sessionStorage.getItem("userToken"));
         })
     }
 
@@ -45,12 +46,12 @@ const Register = () => {
         <div className="login-page">
             <div className="login-page__card">
                 <h1 className="login-page__header"> Inscris toi !</h1>
-                <form className="login-page__form" onSubmit={registerToSymfony}>
-                    <input type="text" id="Fname" placeholder="Prénom" value={firstnameValue} onChange={({ currentTarget: { value } }) => setFirstnameValue(value)}/>
-                    <input type="text" id="Lname" placeholder="Nom" value={lastnameValue} onChange={({ currentTarget: { value } }) => setLastnameValue(value)}/>
-                    <input type="email" id="email" placeholder="Adresse mail" value={mailValue} onChange={({ currentTarget: { value } }) => setMailValue(value)}/>
-                    <input type="password" name="" id="pwd1" placeholder="Mot de passe" value={passwordValue} onChange={({ currentTarget: { value } }) => setPasswordValue(value)}/>
-                    <input type="password" name="" id="pwd2" placeholder="Confirmes mot de passe" value={passwordConfirmValue} onChange={({ currentTarget: { value } }) => setPasswordConfirmValue(value)}/>
+                <form className="login-page__form" onSubmit={registerToNode}>
+                    <input type="text" id="Uname" placeholder="Nom d'utilisateur" required value={usernameValue} onChange={({ currentTarget: { value } }) => setUsernameValue(value)}/>
+                    <input type="email" id="email" placeholder="Adresse mail" required value={mailValue} onChange={({ currentTarget: { value } }) => setMailValue(value)}/>
+                    <input type={ isPwVisible ? "text" : "password"} name="" id="pwd1" placeholder="Mot de passe" required value={passwordValue} onChange={({ currentTarget: { value } }) => setPasswordValue(value)}/>
+                    <div className="--viewPassword" onClick={() => setIsPwVisible(!isPwVisible)}></div>
+                    {/* <input type="password" name="" id="pwd2" placeholder="Confirmes mot de passe" value={passwordConfirmValue} onChange={({ currentTarget: { value } }) => setPasswordConfirmValue(value)}/> */}
                     <button>Inscris toi</button>
                 </form>
             </div>
