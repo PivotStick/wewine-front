@@ -1,13 +1,9 @@
 import React from "react";
-import id1 from "../../../../../../assets/id1.jpg"
-
 
 const Winer = (positionImgProfil, componentDidMount) => {
 
   positionImgProfil = index => {
-    console.log(index);
     const img_profil = document.querySelector(".img_profil");
-    console.log(img_profil);
     if (index % 2 === 0) {
       img_profil.className = "img_profil_right";
     } else {

@@ -26,7 +26,6 @@ const Main = () => {
         
         if (!isSearchOpen) {
             if (pathname === "/shop" || pathname === "/home") {
-                console.log(pathname);
                 setIsHeaderS((scrollY > 0));
             }
         }

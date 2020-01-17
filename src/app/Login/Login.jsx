@@ -27,7 +27,6 @@ const Login = () => {
             return res.json();
         })
         .then(data => {
-            console.log(data)
             setFirstname(data.userInfos.firstname);
             setLastname(data.userInfos.lastname);
             setMail(data.userInfos.mail);

@@ -1,39 +1,29 @@
 .cave-tab {
-    position: relative;
+    position: absolute;
+
     width: 100%;
     height: 100%;
-    
-    &__bg {
-        position: absolute;
-        z-index: -1;
-        width: 100vw;
-        height: 100vh;
-        background: url('./assets/fondPremiumOk.jpg') center;
-        background-size: cover;
-        filter: blur(10px) brightness(75%);
-        transform: scale(1.1);    
+
+    &__header {
+        text-transform: uppercase;
+        text-align: center;
+        
+        letter-spacing: 2px;
+        font-size: 4rem;
+
+        color: $wewine3;
+
+        margin: 6rem 0;
     }
 
+    &__caves {
+        margin: 4rem;
 
-    &__content {
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        margin: 2rem;
-
-        &__h1 {
-            margin: 3rem;
-            color: $wewine3;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            font-weight: 400;
-            text-align: center;
-        }
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        // grid-auto-rows: 16rem;
+        gap: 2rem;
     }
 }
 
-@import "./CardCave/CardCave";
-@import "./InsideCave/InsideCave";
+@import "./CaveCard/CaveCard";

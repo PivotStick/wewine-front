@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 import { motion } from "framer-motion";
 import { pageTransition } from "../pageTransition";
 
@@ -14,22 +13,6 @@ const Account = () => {
 
     const [currentTab, setCurrentTab] = useState("");
 
-    const displayContent = (tab) => {
-        switch (tab) {
-            case "premium":
-                return <Premium changeTab={setCurrentTab} />;
-
-            case "personalInfos":
-                return <PersonalInfos changeTab={setCurrentTab}/>;
-            
-                case "favoriteWinners":
-                return <FavoriteWinners changeTab={setCurrentTab}/>;
-        
-            default:
-                return <LandingPage changeTab={setCurrentTab} />;
-        }
-    }
-
     return (
         <motion.section
             variants={pageTransition}
@@ -39,7 +22,16 @@ const Account = () => {
             transition={pageTransition.transition}
             className="account-tab">
             <div className="account-tab__bg"></div>
-            {displayContent(currentTab)}
+            {
+                currentTab === "premium" ?
+                <Premium changeTab={setCurrentTab}/>
+                : currentTab === "favoriteWinners" ?
+                <FavoriteWinners changeTab={setCurrentTab}/>
+                : currentTab === "personalInfos" ?
+                <PersonalInfos changeTab={setCurrentTab}/>
+                :
+                <LandingPage changeTab={setCurrentTab} />
+            }
         </motion.section>
     );
 }

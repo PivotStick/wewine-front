@@ -1,16 +1,7 @@
 .premium-tab {
+    position: relative;
 
-    margin-top: 2rem;
-
-    display: flex;
     height: 100%;
-
-    &__return {
-        cursor: pointer;
-        margin: .8rem;
-        height: 50px;
-        fill: $wewine3;
-    }
 
     .premium-card{
         display: flex;

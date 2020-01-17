@@ -4,19 +4,19 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    // padding-top: 2rem;
-
     &.--not-scrollable {
         overflow: hidden;
     }
 
-    h1 {
-        margin-bottom: 2rem;
-    }
+    &__return {
+        cursor: pointer;
+        position: absolute;
 
-    p {
-        letter-spacing: 1px;
-        line-height: 1.75rem;
+        top: 2rem;
+        left: 4rem;
+
+        height: 5rem;
+        fill: white;
     }
 }
 

@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { pageTransition } from "../pageTransition";
 
-
 const Shop = () => {
     
     return (
