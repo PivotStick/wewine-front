@@ -15,7 +15,7 @@ export const tabs = [
     },
 
     {
-        name: "boutique",
+        name: "bouteilles",
         link: "/shop",
         setHeaderToSmall: false,
         svg: [

@@ -780,9 +780,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  overflow: hidden;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .account-tab__bg {
@@ -791,8 +791,8 @@ body {
   width: 100%;
   height: 100%;
   background: url("./assets/fondHistorique.jpg") no-repeat center;
-  -webkit-filter: blur(10px) brightness(75%);
-          filter: blur(10px) brightness(75%);
+  -webkit-filter: blur(10px) brightness(45%);
+          filter: blur(10px) brightness(45%);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -902,6 +902,7 @@ body {
 .premium-tab {
   position: relative;
   height: 100%;
+  margin-top: 8rem;
 }
 
 .premium-tab .premium-card {
@@ -935,6 +936,8 @@ body {
 
 .premium-tab .premium-card h1 {
   font-size: 2.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 .premium-tab .premium-card h1,
@@ -972,6 +975,10 @@ body {
   margin: 1rem;
 }
 
+.premium-tab .premium-card__section__article p {
+  font-size: 1.2rem;
+}
+
 .premium-tab .premium-card__section__article__icon {
   height: 100px;
 }
@@ -982,13 +989,15 @@ body {
 
 .premium-tab .premium-card__boutton {
   cursor: pointer;
-  color: #632624;
+  color: white;
   letter-spacing: 1px;
-  font-size: .9rem;
+  font-family: "Stencil_Light";
+  font-size: 1.2rem;
   width: 30%;
+  background-color: #632624;
   margin-top: 2rem;
   padding: .5rem;
-  border: 1px solid #632624;
+  border: none;
   border-radius: 23px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -1319,6 +1328,7 @@ hr {
 .personal-tab {
   height: 100%;
   width: 100%;
+  margin-top: 8rem;
 }
 
 .personal-tab__return {
@@ -1358,7 +1368,7 @@ hr {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 3rem;
   color: #632624;
 }
 
@@ -1366,7 +1376,7 @@ hr {
   height: 100%;
   width: 100%;
   margin-top: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .personal-tab .personal-card__section__article p {
@@ -1398,7 +1408,9 @@ hr {
   font-size: 1rem;
   border: none;
   border-radius: 50px;
-  height: 4rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  height: 3rem;
   width: 15rem;
 }
 
@@ -1579,11 +1591,11 @@ hr {
 .cave-tab__bg {
   position: absolute;
   z-index: -1;
-  width: 100%;
-  height: 50%;
-  background: url("./assets/fondPremiumOk.jpg") no-repeat right;
-  -webkit-filter: blur(2px) brightness(25%);
-          filter: blur(2px) brightness(25%);
+  width: 95%;
+  height: 45%;
+  background: url("./assets/caves.jpg") no-repeat center;
+  -webkit-filter: blur(5px) brightness(55%);
+          filter: blur(5px) brightness(55%);
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
@@ -1601,6 +1613,7 @@ hr {
 .cave-tab__add-cellar {
   cursor: pointer;
   border: none;
+  margin-bottom: 2rem;
   padding: .5rem 1.5rem;
   background-color: #632624;
   font-size: 1.1rem;
@@ -1613,28 +1626,37 @@ hr {
   color: white;
 }
 
-.cave-tab .modal-delete {
+.cave-tab .modal-delete p {
   font-family: "Stencil_Light";
+  font-size: 1.4rem;
 }
 
 .cave-tab .modal-delete__btn {
+  font-size: 1.1rem;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .cave-tab .modal-delete__btn .--deleteBtn, .cave-tab .modal-delete__btn .--cancelBtn {
-  padding: .5rem;
-  background-color: #632624;
-  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Stencil_Light";
+  cursor: pointer;
+  height: 2.7rem;
+  margin-top: 2rem;
   border-radius: 2rem;
+  border: none;
+  width: 18rem;
+  padding: 0 1rem;
+  background-color: #632624;
+  color: white;
 }
 
 .cave-tab__caves {
@@ -1646,6 +1668,7 @@ hr {
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
+  background-color: white;
 }
 
 .cave-card__body {
@@ -1730,6 +1753,7 @@ hr {
   position: absolute;
   overflow: hidden;
   height: 100%;
+  width: 100%;
   top: 0;
   left: 50%;
   z-index: -10;
@@ -1740,8 +1764,8 @@ hr {
 .home-tab .home-bg img {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-filter: blur(10px) brightness(75%);
-          filter: blur(10px) brightness(75%);
+  -webkit-filter: blur(7px) brightness(75%);
+          filter: blur(7px) brightness(75%);
 }
 
 .home-tab .home-page {
@@ -1773,6 +1797,22 @@ hr {
   font-family: "Stencil_Light";
 }
 
+.home-tab .home-page__contact {
+  cursor: pointer;
+  border: none;
+  padding: .5rem 1.5rem;
+  background-color: #632624;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-family: "Stencil_Light";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+  margin: 3rem;
+}
+
 @media only screen and (max-width: 1300px) {
   .home-page {
     position: absolute;
@@ -1799,20 +1839,35 @@ hr {
     text-align: center;
     font-family: "Stencil_Light";
   }
-  .home-page__contact {
-    cursor: pointer;
-    border: none;
-    padding: .5rem 1.5rem;
-    background-color: #632624;
-    font-size: 1.1rem;
-    border-radius: 2rem;
-    -ms-grid-column-align: center;
-        justify-self: center;
-    font-family: "Stencil_Light";
+}
+
+@media only screen and (max-width: 400px) {
+  .home-page {
+    position: absolute;
+  }
+  .home-page__title {
+    padding: 1rem;
+    text-align: center;
+    color: #D0B0AF;
+    font-size: 0.1em;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: white;
-    margin-bottom: 1rem;
+  }
+  .home-page__logo {
+    fill: #632624;
+    height: 4rem;
+    margin: 0 !important;
+  }
+  .home-page__logo .--svgWords {
+    width: 20rem;
+  }
+  .home-page__content {
+    color: #D0B0AF;
+    font-size: 2rem;
+    padding: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+    font-family: "Stencil_Light";
   }
 }
 

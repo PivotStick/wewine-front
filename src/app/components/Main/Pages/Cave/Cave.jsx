@@ -136,13 +136,15 @@ const Cave = () => {
             <AnimatePresence>
             {
                 isDModalVisible && <Modal content={
+
                     <div className="modal-delete">
                         <p>Vous êtes sur le point de supprimer votre cave, vous perdrez toutes les données, ainsi que les bouteilles enregistrées dedans. Êtes-vous sur de vouloir continuer ?</p>
                         <div className="modal-delete__btn">
-                            <button className="modal-delete__btn --deleteBtn" onClick={deleteCellar}>Oui, supprimer mon compte</button>
+                            <button className="modal-delete__btn --deleteBtn" onClick={deleteCellar}>Oui, supprimer cette cave</button>
                             <button className="modal-delete__btn --cancelBtn" onClick={_ => setIsDModalVisible(false)}>Non, annuler</button>
                         </div>
                     </div>
+                    
                 }
                 handleCloseModal={setIsDModalVisible}
                 header="Supprimer une cave" />
