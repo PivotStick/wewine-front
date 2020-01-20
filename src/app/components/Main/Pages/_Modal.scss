@@ -1,0 +1,95 @@
+.modal-wewine {
+    position: fixed;
+
+    z-index: 10;
+
+    left: 0;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+    
+    box-shadow: 0 0 0 20rem rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        text-align: center;
+        color: $wewine3;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 2rem 0 3rem;
+    }
+
+
+    &__close {
+        cursor: pointer;
+        position: absolute;
+
+        top: 1rem;
+        left: 1rem;
+
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 400;
+        
+        height: 4rem;
+        width: 4rem;
+        
+        color: $wewine3;
+    }
+
+    &__card {
+        position: relative;
+
+        background-color: #fefefe;
+        padding: 3rem;
+        min-width: 55%;
+        max-width: 60%;
+        border-radius: 3rem;
+
+
+        form {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: $fontbody;
+
+            input,
+            button {
+                border: none;
+
+                font-size: 1rem;
+
+                margin: 1rem;
+                padding: .5rem 0;
+            }
+
+            input {
+                margin-top: 1rem;
+                background: none;
+                border-bottom: 1px solid $wewine3;
+                width: 50%;
+            }
+
+            button {
+                cursor: pointer;
+
+                margin-top: 2rem;
+                border-radius: 1rem;
+
+                width: 14rem;
+
+                background-color: $wewine3;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: white;
+            }
+        }
+    }
+
+}

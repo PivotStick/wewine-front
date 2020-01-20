@@ -12,3 +12,14 @@
     font-family: "comfortaa-thin";
     src: url("./fonts/comfortaa/Comfortaa_Thin.ttf");
 }
+@font-face {
+    font-family: "Stencil_Light";
+    src: url("./fonts/comfortaa/Stencil_Light.ttf");
+}
+
+@font-face {
+    font-family: "Unicase_Light";
+    src: url("./fonts/comfortaa/Unicase_Light.ttf");
+}
+
+$fontbody: "Stencil_Light";

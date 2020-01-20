@@ -1,5 +1,5 @@
 .cave-card {
-    
+
     &__body {
         position: relative;
 
@@ -8,9 +8,11 @@
 
         background-color: $wewine3;
         color: $wewine2;
-        
+                
         padding: 5rem 2rem 6rem 5rem;
         border-radius: 2rem;
+        
+        
     }
 
     &__delete {
@@ -24,9 +26,22 @@
         height: 1.5rem;
     }
 
+    &__update {
+        cursor: pointer;
+        position: absolute;
+
+        top: 1.2rem;
+        right: 2rem;
+
+        fill: $wewine2;
+        height: 2rem;
+    
+}
+
     &__name {
         text-transform: uppercase;
         letter-spacing: 2px;
+        
 
         font-size: 2.5rem;
         
@@ -35,6 +50,8 @@
 
     &__max-count {
         font-size: 1.25rem;
+        color: $wewine1;
+        font-family: $fontbody;
     }
 
     &__footer {
@@ -45,6 +62,7 @@
 
         border-radius: 2rem;
         background-color: $wewine2;
+        font-family: $fontbody;
         
         width: 90%;
         height: 8rem;
@@ -61,6 +79,7 @@
     &__current-count {
         margin-left: 1rem;
         color: $wewine1;
+        font-family: $fontbody;
 
         letter-spacing: 1px;
         font-size: 1.25rem;

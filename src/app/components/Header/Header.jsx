@@ -5,6 +5,7 @@ import { AppContext } from "../Contexts/AppContext";
 
 import Logo from "./Logo/Logo";
 import Nav from "./Nav/Nav";
+import NavResponsive from "./NavResponsive/NavResponsive";
 
 const header = {
     small: {
@@ -34,6 +35,7 @@ const Header = () => {
         className="header">
             <Logo />
             <Nav />
+            <NavResponsive/>
         </motion.header>
     );
 }

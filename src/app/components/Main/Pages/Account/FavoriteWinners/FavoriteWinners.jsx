@@ -1,7 +1,7 @@
 import React from "react";
 
 import ReturnContent from "../ReturnContent";
-import Winer from "./Winer";
+// import Winer from "./Winer";
 
 const FavoriteWinners = ({ changeTab }) => {
 

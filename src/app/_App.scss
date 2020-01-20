@@ -20,6 +20,41 @@
     }
 }
 
+.loading-page {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+    background-color: white;
+    box-shadow: 0 -10rem 0 10rem white;
+
+    .--svgBottle {
+        width: 60%;
+        fill: $wewine3;
+
+        .cls-1 {
+            fill: $wewine1;
+        }
+
+        .cls-2 {
+            fill: $wewine2;
+        }
+
+        .cls-3 {
+            fill: $wewine3;
+        }
+    }
+}
 
 @import "./LandingPage/LandingPage";
 @import "./Login/Login";

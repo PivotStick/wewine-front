@@ -1,3 +1,5 @@
+// Attention ce fichier est fait pour les animations de transition de pages
+
 export const pageTransition = {
     exit: {
         x: '-50%',
