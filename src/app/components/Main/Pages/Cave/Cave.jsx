@@ -15,22 +15,22 @@ const Cave = () => {
     //     switch (tab) {
     //         case "cardCave":
     //             return <InsideCave changeTab={setCurrentTab}/>;
-        
+
     //         default:
     //             return <CardCave changeTab={setCurrentTab} data={cellar} /> ;
     //     }
     // };
-    
+
 
     const getCellar = () => {
-    
-            fetch('http://127.0.0.1:8000/cellars', {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer " + localStorage.getItem('userToken')
-                }
-            })
+
+        fetch('http://192.168.1.33:8000/cellars', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem('userToken')
+            }
+        })
             .then(res => {
                 return res.json();
             })
@@ -43,12 +43,12 @@ const Cave = () => {
     // quand l'utilisateur n'a pas de cave
     const displayMessage = () => {
         if (cellars.length === 0) {
-            return(
-                <CardCave cellar={{name: "changer ce titre", maxContent: 46}} changeTab={setCurrentTab} getCellar={getCellar} />
+            return (
+                <CardCave cellar={{ name: "changer ce titre", maxContent: 46 }} changeTab={setCurrentTab} getCellar={getCellar} />
             );
         }
     }
- 
+
     useEffect(getCellar, []);
 
 
@@ -64,10 +64,12 @@ const Cave = () => {
             <div className="cave-tab__content">
 
                 <h1 className="cave-tab__content__h1">CAVE</h1>
-                {cellars.map(cellar => <CardCave key={cellar._id} cellar={cellar} changeTab={setCurrentTab} getCellar={getCellar} />)}
-                   
+                {/*cellars.map(cellar => <CardCave key={cellar._id} cellar={cellar} changeTab={setCurrentTab} getCellar={getCellar} />)*/}
+
                 {displayMessage()}
             </div>
+
+            {<InsideCave changeTab={setCurrentTab} />}
 
         </motion.section>
     );

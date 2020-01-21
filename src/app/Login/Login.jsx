@@ -5,7 +5,7 @@ import { UserContext } from "../components/Contexts/UserContext";
 
 const Login = () => {
 
-    const {setIsConnected} = useContext(UserContext);
+    const { setIsConnected } = useContext(UserContext);
 
     const [mailValue, setMailValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
@@ -13,7 +13,7 @@ const Login = () => {
     const connectToSymfony = e => {
         e.preventDefault();
 
-        fetch('http://127.0.0.1:8000/users/login', {
+        fetch('http://192.168.1.33:8000/users/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -25,15 +25,15 @@ const Login = () => {
                 }
             )
         })
-        .then(res => {
-            return res.json();
-        })
-        .then(data => {
-            if (data.token) {
-                localStorage.setItem('userToken', data.token);
-                setIsConnected(true);
-            }
-        })
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                if (data.token) {
+                    localStorage.setItem('userToken', data.token);
+                    setIsConnected(true);
+                }
+            })
     }
 
     return (

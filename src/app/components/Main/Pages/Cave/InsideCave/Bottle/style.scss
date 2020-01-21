@@ -1,0 +1,152 @@
+.bottle {
+  text-align: center;
+
+  &_img {
+    background: radial-gradient(#632624 50%, #9b4843 31%);
+    height: 220px;
+    width: 220px;
+    margin: auto auto 50px;
+    img {
+      height: 220px;
+    }
+  }
+  &_info {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #d0b0af;
+    height: 70px;
+    
+    &_domain {
+      margin-top: 18px;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #632624;
+    }
+  }
+
+  &_qty {
+    color: #d0b0af;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    
+    &::after {
+      content: "";
+      display: block;
+      width: 53px;
+      height: 2px;
+      margin: auto;
+      background-color: #632624;
+      border-radius: 10px;
+      transition: all ease-in 0.2s;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      -webkit-transition: all ease-in 0.2s;
+      -moz-transition: all ease-in 0.2s;
+      -ms-transition: all ease-in 0.2s;
+      -o-transition: all ease-in 0.2s;
+    }
+    &:hover {
+      &::after {
+        width: 150px;
+        transition: all ease-in 0.2s;
+        -webkit-transition: all ease-in 0.2s;
+        -moz-transition: all ease-in 0.2s;
+        -ms-transition: all ease-in 0.2s;
+        -o-transition: all ease-in 0.2s;
+      }
+    }
+  }
+
+  .bottle_changeqty {
+    display: none;
+  }
+
+  svg {
+    width: 15px;
+  }
+
+  button {
+    letter-spacing: 2px;
+    font-size: 0.6em;
+    height: 33px;
+    margin: 15px auto;
+    background-color: #632624;
+    color: #d0b0af;
+    box-shadow: 6px 4px 9px #22222270;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .bottle {
+    button {
+      margin-top: -15px !important;
+    }
+    &_img {
+      height: 161px;
+    }
+
+    &info_name {
+      font-size: 0.9rem;
+      margin-bottom: 21px;
+    }
+
+    svg {
+      width: 11px;
+    }
+
+    .avis_note {
+      font-size: 1.2rem;
+    }
+
+    .avis_nbr {
+      font-size: 0.7rem;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .bottle {
+    &_info {
+      &_name {
+        margin-bottom: 38px;
+      }
+      &_domain {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+      }
+    }
+    
+    button {
+      letter-spacing: 2px;
+      font-size: 0.5em;
+      margin-top: 10px;
+      width: 140px;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .bottle {
+    &_img {
+      background: radial-gradient(#632624 50%, #9b4843 31%);
+      height: 180px;
+      width: 180px;
+      margin: auto;
+    }
+    &_info {
+      margin-top: 44px;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 1124px) {
+  .bottle_img {
+    width: 183px;
+    height: 183px;
+  }
+}

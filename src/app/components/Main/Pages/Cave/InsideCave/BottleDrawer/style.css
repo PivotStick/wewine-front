@@ -1,0 +1,194 @@
+.winer_profil {
+  background-image: url(./assets/couv.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 100%;
+}
+
+.winer_profil_header {
+  background-color: #d0b0af7d;
+}
+
+.winer_profil h1 {
+  color: white;
+  text-align: center;
+  margin: auto;
+  height: 340px;
+  line-height: 300px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 3rem;
+}
+
+.winer_profil_main {
+  border-radius: 60px 60px 0 0;
+  -webkit-box-shadow: 0px -10px 16px 2px rgba(63, 63, 63, 0.58);
+          box-shadow: 0px -10px 16px 2px rgba(63, 63, 63, 0.58);
+  margin-top: -15px;
+  background-color: white;
+  -webkit-border-radius: 60px 60px 0 0;
+  -moz-border-radius: 60px 60px 0 0;
+  -ms-border-radius: 60px 60px 0 0;
+  -o-border-radius: 60px 60px 0 0;
+}
+
+.winer_profil_main_photo {
+  width: 150px;
+  border-radius: 200px;
+  margin: -150px auto auto;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -ms-border-radius: 200px;
+  -o-border-radius: 200px;
+}
+
+.winer_profil_main_description {
+  font-size: 1.5rem;
+  color: #632624;
+  font-style: italic;
+  font-weight: 300;
+  width: 970px;
+  text-align: center;
+  margin: 50px auto 100px;
+  line-height: 2rem;
+}
+
+.winer_profil_main .tab {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
+}
+
+.winer_profil_main .tab_list {
+  background-color: #632624;
+  width: 100%;
+  padding: 0;
+  margin: 0 1px auto;
+  color: #d0b0af;
+  height: 402px;
+}
+
+.winer_profil_main .tab_list li {
+  background-color: #632624;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  list-style: none;
+  font-size: 1.4rem;
+  height: 70px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+
+.winer_profil_main .tab_list li:hover, .winer_profil_main .tab_list li:focus {
+  background-color: #9b4843;
+  height: 100px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.winer_profil_main .tab_list .change_active {
+  background-color: #9b4843;
+  height: 100px;
+}
+
+.winer_profil_main .tab_content {
+  width: 100%;
+  background-color: #9b4843;
+}
+
+.winer_profil_main .tab_content h2 {
+  margin-top: 50px;
+  text-align: center;
+  color: #d0b0af;
+}
+
+.winer_profil_main .tab_content .grid_bottle {
+  margin: 80px auto 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.winer_profil_main .tab_content .grid_bottle div {
+  padding: 0 30px;
+}
+
+@media only screen and (max-width: 991px) {
+  .winer_profil_main_description {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  .winer_profil_main .tab_content .grid_bottle {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .winer_profil {
+    height: 285px;
+  }
+  .winer_profil h1 {
+    font-size: 1.5rem;
+    height: 285px;
+    line-height: 141px;
+  }
+  .winer_profil_main {
+    margin-top: -54px;
+  }
+  .winer_profil_main_description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 40px auto 60px;
+  }
+  .winer_profil_main .tab {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  .winer_profil_main .tab_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100px;
+    margin: 0 0 -1px;
+  }
+  .winer_profil_main .tab_list li {
+    width: 330px;
+    height: 100px;
+    padding: 0;
+    -ms-writing-mode: lr-tb;
+        writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    -webkit-writing-mode: horizontal-tb;
+    -ms-writing-mode: horizontal-tb;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  .winer_profil_main .tab_list li:hover, .winer_profil_main .tab_list li:focus {
+    height: 100px;
+    padding: 5px;
+  }
+  .winer_profil_main .tab_list li .change_active {
+    height: 100px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
