@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import SearchTab from "./SearchTab/SearchTab";
 
 import Home from "./Pages/Home/Home";
-import Shop from "./Pages/Shop/Shop";
+import Bottles from "./Pages/Bottles/Bottles";
 import Cave from "./Pages/Cave/Cave";
 import Account from "./Pages/Account/Account";
 
@@ -44,7 +44,7 @@ const Main = () => {
             <AnimatePresence>
                 <Switch location={location} key={location.pathname}>
                     <Route exact path="/home" component={Home} />
-                    <Route exact path="/shop" component={Shop} />
+                    <Route exact path="/bottles" component={Bottles} />
                     <Route exact path="/cave" component={Cave} />
                     <Route exact path="/account" component={Account} />
                 </Switch>

@@ -19,4 +19,21 @@ $wewine1: #D0B0AF;
 $wewine2: #9B4843;
 $wewine3: #632624;
 
+.--wewine-separator {
+    width: 100%;
+
+    margin: 1rem 0;
+
+    &::after, &::before {
+        content: "";
+        display: block;
+
+        border-radius: 1rem;
+        background-color: $wewine3;
+        height: 4px;
+
+        margin: .25rem 0;
+    }
+}
+
 @import "./app/App";

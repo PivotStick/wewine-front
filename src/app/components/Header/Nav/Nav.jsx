@@ -14,15 +14,6 @@ const Nav = () => {
     return (
         <>
             <div className="nav_responsive">
-
-            <input id="burger" type="checkbox" />
-
-            <label for="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
             <nav>
                 <ul>
                     <li>

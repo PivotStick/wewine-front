@@ -30,18 +30,19 @@ const App = _ => {
 
     useEffect(() => {
 
-        if (localStorage.getItem("userToken")) {
-            fetch("http://localhost:8000/users/verify", {
-                headers: { "Authorization": "Bearer " + localStorage.getItem("userToken") }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    setTimeout(() => setIsConnected(data.isVerified), 3000);
-                });
-        } else {
-            setTimeout(() => setIsConnected(false), 3000);
-        }
-
+        // if (localStorage.getItem("userToken")) {
+        //     fetch("http://localhost:8000/users/verify", {
+        //         headers: { "Authorization": "Bearer " + localStorage.getItem("userToken") }
+        //     })
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             setTimeout(() => setIsConnected(data.isVerified), 3000);
+        //         });
+        //     } else {
+        //         setTimeout(() => setIsConnected(false), 3000);
+        //     }
+            
+            setTimeout(() => setIsConnected(true), 3000);
     }, []);
 
     return (
