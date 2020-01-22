@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import ReturnContent from "../ReturnContent";
+import { Link } from 'react-router-dom';
+import Modal from "../../Modal";
+import { motion, AnimatePresence } from "framer-motion";
+
+
 const PersonalInfos = ({ changeTab }) => {
+    
+    const [isUModalVisible, setIsUModalVisible] = useState('');
+    const [isDModalVisible, setIsDModalVisible] = useState('');
 
     const [infosUsers, setInfosUsers] = useState({});
 
-    const [usernameValue, setUsernameValue] = useState("");
-    const [mailValue, setMailValue] = useState(""); 
+    const [newNameInput, setNewNameInput] = useState("");
+    const [newMailInput, setNewMailInput] = useState("");
 
     const getInfoUser = () => {
         
@@ -18,27 +26,35 @@ const PersonalInfos = ({ changeTab }) => {
         })
         .then(res => res.json())
         .then(infosUsers => {
-            //console.log(infosUsers);
+            console.log(infosUsers);
             setInfosUsers(infosUsers);
         })
     }
+   
 
-    const updateUserInfos = () => {
-        fetch('http://127.0.0.1:8000/users/update', {
-            method: 'PATCH',
+    const updateUserInfos = _ => {
+        fetch("http://localhost:8000/users/update", {
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": "Bearer " + localStorage.getItem("userToken")
             },
             body: JSON.stringify([
-                { 'propsName': 'username', 'value': usernameValue },
-                { 'propsName': 'mail', 'value': mailValue }
+                { "propName": "username", "value": newNameInput },
+                { "propName": "mail", "value": newMailInput }
             ])
         })
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            getInfoUser();
         })
+    }
+
+    const handelModalSubmit = e => {
+        e.preventDefault();
+        setIsUModalVisible(false);
+        updateUserInfos();
     }
 
     const deleteUser = () => {
@@ -49,9 +65,12 @@ const PersonalInfos = ({ changeTab }) => {
                 "Authorization": "Bearer " + localStorage.getItem("userToken")
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                return res.json();
+            })
             .then(data => {
-                console.log(data)
+                localStorage.removeItem("userToken");
+                window.location.reload();
             })
     }
 
@@ -67,52 +86,64 @@ const PersonalInfos = ({ changeTab }) => {
                     <div className="personal-card__section__article">
                         <p>Nom d'ulisateur : <span> {infosUsers.username} </span></p>
                         <p>Adresse mail : <span> {infosUsers.mail} </span></p>
-                        <p>Nombre de cave(s) : <span>{infosUsers.cellar}</span></p>
+                        <p>Nombre de cave(s) : <span>{infosUsers.cellarCount}</span></p>
                         <p>Nombre de bouteilles totale : <span>12</span></p>
                         
                         <div className="personal-card__section__article__btn">
-                            <button id="btnUpdate">Modifier votre compte</button>
-                            <button id="btnDelete">Suprimer votre compte</button>
+                            <motion.button 
+                                whileHover={{ scale: 1.04, y: -8}}
+
+                                onClick={_ => setIsUModalVisible(true)} id="btnUpdate"> Modifier votre compte
+                            </motion.button>
+                            <motion.button
+                                whileHover={{ scale: 1.04, y: -8}}
+
+                                onClick={_ => setIsDModalVisible(true)}
+
+                                id="btnDelete">Suprimer votre compte</motion.button>
                         </div>
                     </div>
+                    
+                    <AnimatePresence>
+                        {
+                            isUModalVisible && <Modal content={
 
-                    <div id="modalUpdate" className="modalUpdate">
-                        <div className="modal-content">
-                            <div className="header">
-                                <span className="header__close">&times;</span>
-                                <h1 className="header__title">Modifier votre profil</h1>
-                            </div>
 
-                            <div className="content">
-                                <form>
-                                    <input type="text" placeholder="Nom d'ulisateur " value={usernameValue} onChange={({ currentTarget: { value } }) => setUsernameValue(value)} />
-                                    <input type="email" placeholder="Email" value={mailValue} onChange={({ currentTarget: { value } }) => setMailValue(value)} />
-                              
-                                    <button onClick={updateUserInfos}>Modifier</button>
-                                </form>
+                                <div className="content">
+                                    <form onSubmit={handelModalSubmit}>
+                                        <input type="text" placeholder="Nom d'ulisateur " value={newNameInput} onChange={e => setNewNameInput(e.currentTarget.value)} />
+                                        <input type="email" placeholder="Email" value={newMailInput} onChange={e => setNewMailInput(e.currentTarget.value)}/>
+                                
+                                        <button >Modifier</button>
+                                    </form>
+                                </div>
+                            }
+                            handleCloseModal={setIsUModalVisible}
+                            header="Modifier votre profil" />
+                        }
 
-                            </div>
-                        </div>
-                    </div>
+                    </AnimatePresence>
 
-                    <div className="modalDelete">
-                        <div className="content">
-                                <div className="modal-content">
-                                    <div className="header">
-                                        <span className="header__close">&times;</span>
-                                        <h1 className="header__title"> Supprimer votre compte </h1>
-                                    </div>
+                    <AnimatePresence>
+                        {
+                            isDModalVisible && <Modal content= {
 
-                                    <div className="content">
-                                        <p>Vous êtes sur le point de supprimer votre compte, vous perdez vos caves, mais aussi les bouteilles enregistrées dans celle-ci. Êtes-vous sur de vouloir continuer ?</p>
-                                        <div className="content__btn">
-                                        <button onClick={deleteUser}>Oui, supprimer mon compte</button>
+                                <div className="content">
+                                    <p>Vous êtes sur le point de supprimer votre compte, vous perdez vos caves, mais aussi les bouteilles enregistrées dans celle-ci. Êtes-vous sur de vouloir continuer ?</p>
+                                    <div className="content__btn">
+                                        <Link to="/">
+                                            <button onClick={deleteUser}>Oui, supprimer mon compte</button>
+                                        </Link>
                                         <button>Non, annuler</button>
-                                        </div>
                                     </div>
                                 </div>
-                        </div>
-                    </div>
+
+                            }
+                            handleCloseModal={setIsDModalVisible}
+                            header="Supprimer votre" />
+                        }
+
+                    </AnimatePresence>
                 </div>
             </div>
            

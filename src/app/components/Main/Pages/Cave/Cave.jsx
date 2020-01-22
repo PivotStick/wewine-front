@@ -5,6 +5,7 @@ import Modal from "../Modal";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { pageTransition } from "../pageTransition";
+import Bottles from "./InsideCave/BottleDrawer";
 
 const Cave = () => {
 
@@ -50,7 +51,10 @@ const Cave = () => {
             headers: { "Authorization": "Bearer " + localStorage.getItem("userToken")} 
         })
         .then(res => res.json())
-        .then(data => setCellars(data.cellars))
+        .then(data =>{
+            console.log(data);
+            setCellars(data.cellars);
+        })
     }
 
     const handleSubmit = (e) => {
@@ -177,6 +181,7 @@ const Cave = () => {
                 header="Créer une cave" />
             }
             </AnimatePresence>
+            <Bottles/>
         </motion.section>
     );
 }

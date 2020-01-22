@@ -7,7 +7,7 @@ export default class HeaderResponsive extends Component {
 
                 <input id="burger" type="checkbox" />
 
-                <label for="burger">
+                <label htmlFor="burger">
                     <span></span>
                     <span></span>
                     <span></span>

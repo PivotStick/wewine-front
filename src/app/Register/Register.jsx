@@ -35,10 +35,10 @@ const Register = () => {
             })
             .then(data => {
                 if (data.token) {
-                    sessionStorage.setItem('userToken', data.token);
+                    localStorage.setItem('userToken', data.token);
                     setIsConnected(true);
+                    
                 }
-                console.log(sessionStorage.getItem("userToken"));
             })
     }
 

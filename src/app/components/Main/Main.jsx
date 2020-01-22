@@ -7,7 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import SearchTab from "./SearchTab/SearchTab";
 
 import Home from "./Pages/Home/Home";
-import Shop from "./Pages/Shop/Shop";
+import Bottles from "./Pages/Bottles/Bottles";
 import Cave from "./Pages/Cave/Cave";
 import Account from "./Pages/Account/Account";
 
@@ -21,11 +21,10 @@ const Main = () => {
 
     const handleScroll = (event) => {
         const scrollY = event.currentTarget.scrollTop;
-
         const pathname = window.location.pathname;
         
         if (!isSearchOpen) {
-            if (pathname === "/shop" || pathname === "/home") {
+            if (pathname === "/bottles" || pathname === "/home") {
                 setIsHeaderS((scrollY > 0));
             }
         }
@@ -44,7 +43,7 @@ const Main = () => {
             <AnimatePresence>
                 <Switch location={location} key={location.pathname}>
                     <Route exact path="/home" component={Home} />
-                    <Route exact path="/shop" component={Shop} />
+                    <Route exact path="/bottles" component={Bottles} />
                     <Route exact path="/cave" component={Cave} />
                     <Route exact path="/account" component={Account} />
                 </Switch>

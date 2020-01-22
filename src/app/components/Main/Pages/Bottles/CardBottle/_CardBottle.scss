@@ -1,0 +1,91 @@
+.card-bottle{
+    font-family: $fontbody;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+
+    // background-color: red;
+
+    &__svg {
+        height: 40vh;
+        z-index: 1;
+
+        fill: #FFFFFF44;
+
+        .--cls-1 { fill: $wewine3; }
+        .--cls-2 { fill: #FFFFFF22; }
+        .--cls-3 { fill: $wewine1; }
+        .--cls-4 { fill: $wewine2; }
+    }
+
+    &__details {
+        $color: rgba($wewine3, 0.12);
+
+        background-color: $color;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        padding: 0 2rem 0 4rem;
+        border-radius: 0 2rem 2rem 2rem;
+
+        transform: translate(-4rem, 2rem);
+
+        height: 100%;
+        width: 100%;
+    }
+    
+    &__name {
+        // background-color: blue;
+        color: $wewine3;
+
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    &__domain{
+        // background-color: yellowgreen;
+        color: $wewine3;
+
+        height: 25%;
+
+        display: flex;
+        align-items: center;
+
+        h4 {
+            // background-color: crimson;
+            font-family: $fontbody;
+            letter-spacing: 2px;
+        }
+
+        .--domain-svg {
+            // background-color: darkgoldenrod;
+            height: 100%;
+            fill: $wewine3;
+        }
+    }
+
+    &__buttons {
+        // background-color: darkslateblue;
+
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            cursor: pointer;
+            width: 45%;
+            padding: .5rem 1rem;
+
+            border: none;
+            border-radius: 2rem;
+
+            letter-spacing: 1px;
+            font-size: .9rem;
+
+            background-color: $wewine3;
+            color: $wewine1;
+        }
+    }
+}
+
+@import "../Bottle/Product";

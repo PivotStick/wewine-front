@@ -1,0 +1,19 @@
+.bottles-tab {
+    position: absolute;
+    width: 100%;
+    padding: 4rem 4vw;
+
+    &__header {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 6rem;
+    }
+
+    &__bottles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+        gap: 8rem 4rem;
+    }
+}
+
+@import "./CardBottle/CardBottle";
