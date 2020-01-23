@@ -14,7 +14,6 @@ export default class HeaderResponsive extends Component {
                     <span></span>
                     <span></span>
                 </label>
-
                 <nav>
                     <ul>
                         <li>

@@ -310,13 +310,18 @@ body {
 
 .nav {
   position: relative;
-  width: 80%;
+  width: 100%;
   -ms-grid-column-align: center;
       justify-self: center;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+}
+
+.nav a[href="/home"] {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
 }
 
 .nav__logo {
@@ -329,7 +334,8 @@ body {
 }
 
 .nav__logo .--svgBottle {
-  height: 3rem;
+  height: 2rem;
+  margin-left: 14px;
 }
 
 .nav__logo .--svgBottle .cls-1 {

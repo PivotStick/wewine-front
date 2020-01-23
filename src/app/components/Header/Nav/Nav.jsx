@@ -26,7 +26,7 @@ const Nav = () => {
                 <motion.div
                     animate={{
                         y: "-50%",
-                        x: isHeaderS ? "-80%" : "-145%",
+                        x: isHeaderS ? "0%" : "-145%",
                         opacity: isHeaderS ? 1 : 0,
                         transition: {
                             duration: .75,
@@ -72,9 +72,6 @@ const Nav = () => {
                 </label>
 
                 <nav>
-
-
-
 
                     <ul>
                         <li>
