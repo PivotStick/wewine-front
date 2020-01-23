@@ -1,0 +1,32 @@
+.cave-content {
+
+    padding: 3rem 6rem;
+
+    .--return {
+        fill: $wewine3;
+
+        transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        &:hover {
+            transform: translateX(-10%);
+        }
+    }
+
+    &__name {
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+
+        font-size: 3rem;
+
+        margin-bottom: 6rem;
+    }
+
+    &__bottles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6rem 10rem;
+    }
+}
+
+@import "./BottleCard/BottleCard";

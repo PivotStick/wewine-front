@@ -14,7 +14,7 @@ const Shop = () => {
     const [listBottles, setListBottles] = useState([]);
 
     const [isMPOpen, setIsMPOpen] = useState(false);
-    const [isMAOpen, setIsMAOpen] = useState(false);
+    // const [isMAOpen, setIsMAOpen] = useState(false);
 
     const [MBName, setMBName] = useState("");
     const [MBVintage, setMBVintage] = useState("");

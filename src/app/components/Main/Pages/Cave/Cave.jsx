@@ -5,11 +5,16 @@ import Modal from "../Modal";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { pageTransition } from "../pageTransition";
-import Bottles from "./InsideCave/BottleDrawer";
+import CaveContent from "./CaveContent/CaveContent";
+
 
 const Cave = () => {
 
     const [nameValue, setNameValue] = useState('');
+
+    const [areBottlesDisplayed, setAreBottlesDisplayed] = useState(false);
+    const [displayCaveName, setDisplayCaveName] = useState("");
+    const [bottlesToDisplay, setBottlesToDisplay] = useState([]);
 
     const [isCModalVisible, setIsCModalVisible] = useState(false);
     const [isDModalVisible, setIsDModalVisible] = useState(false);
@@ -52,9 +57,15 @@ const Cave = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data);
             setCellars(data.cellars);
         })
+    }
+
+    const displayCaveBottles = (name, bottles, caveId) => {
+        setCurrentCellarId(caveId);
+        setDisplayCaveName(name);
+        setBottlesToDisplay(bottles);
+        setAreBottlesDisplayed(true);
     }
 
     const handleSubmit = (e) => {
@@ -109,79 +120,96 @@ const Cave = () => {
             exit="exit"
             transition={pageTransition.transition}
         className="cave-tab">         
-
-            <div className="cave-tab__header">
-                <div className="cave-tab__bg"></div>
-                <h1 className="cave-tab__title">Les caves</h1>
-                <p className="cave-tab__content">Ici tu peux gérer tes caves, en créer, les modifier, ou les supprimer</p>
-                <motion.button 
-
-                    whileHover={{ scale: 1.04, y: -8 }}
-
-                onClick={_ => setIsCModalVisible(true)} className="cave-tab__add-cellar">Créer une cave</motion.button>
-            </div>
-
-            <ul className="cave-tab__caves">
-            <AnimatePresence>
-            {
-                cellars.map(cave => {
-                    return <CaveCard
-                    key={cave._cellarId}
-                    cellarId={cave._cellarId}
-                    name={cave.name}
-                    bottles={cave.bottles}
-                    maxCount={cave.maxCount}
-                    openDeleteModal={setIsDModalVisible}
-                    openUpdateModal={setIsUModalVisible}
-                    setCurrentId={setCurrentCellarId} />
-                })
-            }
-            </AnimatePresence>
-            <AnimatePresence>
-            {
-                isDModalVisible && <Modal content={
-
-                    <div className="modal-delete">
-                        <p>Vous êtes sur le point de supprimer votre cave, vous perdrez toutes les données, ainsi que les bouteilles enregistrées dedans. Êtes-vous sur de vouloir continuer ?</p>
-                        <div className="modal-delete__btn">
-                            <button className="modal-delete__btn --deleteBtn" onClick={deleteCellar}>Oui, supprimer cette cave</button>
-                            <button className="modal-delete__btn --cancelBtn" onClick={_ => setIsDModalVisible(false)}>Non, annuler</button>
-                        </div>
-                    </div>
+        {
+            areBottlesDisplayed ? (
+                <CaveContent
                     
-                }
-                handleCloseModal={setIsDModalVisible}
-                header="Supprimer une cave" />
-            }
-            </AnimatePresence>
-            <AnimatePresence>
-            {
-                isUModalVisible && <Modal content={
-                    <form onSubmit={handleModalSubmit}>
-                        <input value={newNameInput} onChange={e => setNewNameInput(e.currentTarget.value)} type="text" placeholder="Nouveau nom de la cave"/>
+                    caveId={currentCellarId}
+                    caveName={displayCaveName}
+                    bottles={bottlesToDisplay}
+                    backToCaves={_ => setAreBottlesDisplayed(false)}
+                />
+            ) : (
+                <>
+                <div className="cave-tab__header">
+                    <div className="cave-tab__bg"></div>
+                    <h1 className="cave-tab__title">Les caves</h1>
+                    <p className="cave-tab__content">Ici tu peux gérer tes caves, en créer, les modifier, ou les supprimer</p>
+                    <motion.button 
 
-                        <button>Modifier</button>
-                    </form>
-                }
-                handleCloseModal={setIsUModalVisible}
-                header="Modifier une cave" />
-            }
-            </AnimatePresence>
-            </ul>
-            <AnimatePresence>
-            {
-                isCModalVisible && <Modal content={
-                    <form onSubmit={handleSubmit}>
-                        <input type="text" placeholder="Nom de la cave" value={nameValue} onChange={({ currentTarget: { value } }) => setNameValue(value)} />
+                        whileHover={{ scale: 1.04, y: -8 }}
 
-                        <button>Créer</button>
-                    </form>
+                    onClick={_ => setIsCModalVisible(true)} className="cave-tab__add-cellar">Créer une cave</motion.button>
+                </div>
+
+                <ul className="cave-tab__caves">
+                <AnimatePresence>
+                {
+                    cellars.map(cave => {
+
+                        return <CaveCard
+
+                        onClick={displayCaveBottles}
+
+                        key={cave._cellarId}
+                        cellarId={cave._cellarId}
+                        name={cave.name}
+                        bottles={cave.bottles}
+                        maxCount={cave.maxCount}
+                        openDeleteModal={setIsDModalVisible}
+                        openUpdateModal={setIsUModalVisible}
+                        setCurrentId={setCurrentCellarId} />
+                    })
                 }
-                handleCloseModal={setIsCModalVisible}
-                header="Créer une cave" />
-            }
-            </AnimatePresence>
-            <Bottles/>
+                </AnimatePresence>
+                <AnimatePresence>
+                {
+                    isDModalVisible && <Modal content={
+
+                        <div className="modal-delete">
+                            <p>Vous êtes sur le point de supprimer votre cave, vous perdrez toutes les données, ainsi que les bouteilles enregistrées dedans. Êtes-vous sur de vouloir continuer ?</p>
+                            <div className="modal-delete__btn">
+                                <button className="modal-delete__btn --deleteBtn" onClick={deleteCellar}>Oui, supprimer cette cave</button>
+                                <button className="modal-delete__btn --cancelBtn" onClick={_ => setIsDModalVisible(false)}>Non, annuler</button>
+                            </div>
+                        </div>
+                        
+                    }
+                    handleCloseModal={setIsDModalVisible}
+                    header="Supprimer une cave" />
+                }
+                </AnimatePresence>
+                <AnimatePresence>
+                {
+                    isUModalVisible && <Modal content={
+                        <form onSubmit={handleModalSubmit}>
+                            <input value={newNameInput} onChange={e => setNewNameInput(e.currentTarget.value)} type="text" placeholder="Nouveau nom de la cave"/>
+
+                            <button>Modifier</button>
+                        </form>
+                    }
+                    handleCloseModal={setIsUModalVisible}
+                    header="Modifier une cave" />
+                }
+                </AnimatePresence>
+                </ul>
+                <AnimatePresence>
+                {
+                    isCModalVisible && <Modal content={
+                        <form onSubmit={handleSubmit}>
+                            <input type="text" placeholder="Nom de la cave" value={nameValue} onChange={({ currentTarget: { value } }) => setNameValue(value)} />
+
+                            <button>Créer</button>
+                        </form>
+                    }
+                    handleCloseModal={setIsCModalVisible}
+                    header="Créer une cave" />
+                }
+                </AnimatePresence>
+                </>
+            )
+        }
+
         </motion.section>
     );
 }

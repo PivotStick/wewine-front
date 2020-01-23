@@ -2,7 +2,7 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-const CaveCard = ({ cellarId, name, maxCount, bottles, openUpdateModal, openDeleteModal, setCurrentId }) => {
+const CaveCard = ({ cellarId, name, maxCount, bottles, openUpdateModal, openDeleteModal, setCurrentId, onClick }) => {
 
     const openDM = () => {
         openUpdateModal(true);
@@ -38,7 +38,7 @@ const CaveCard = ({ cellarId, name, maxCount, bottles, openUpdateModal, openDele
                 <p className="cave-card__max-count">Vous pouvez contenir {maxCount} bouteilles maximum</p>
             </div>
 
-            <div className="cave-card__footer">
+            <div onClick={_ => onClick(name, bottles, cellarId)} className="cave-card__footer">
                 <svg className="--cellarSvg" viewBox="-27 0 512 512">
                     <path d="m331.1875 492c-2.628906 0-5.210938 1.070312-7.070312 2.929688-1.859376 1.859374-2.929688 4.441406-2.929688 7.070312s1.070312 5.210938 2.929688 7.070312c1.859374 1.859376 4.441406 2.929688 7.070312 2.929688s5.210938-1.070312 7.070312-2.929688c1.859376-1.859374 2.929688-4.441406 2.929688-7.070312s-1.070312-5.210938-2.929688-7.070312c-1.859374-1.859376-4.441406-2.929688-7.070312-2.929688zm0 0"/>
                     <path d="m100.882812 372.152344c-16.542968 0-30 13.457031-30 30 0 16.542968 13.457032 30 30 30 16.542969 0 30-13.457032 30-30 0-16.542969-13.457031-30-30-30zm0 40c-5.515624 0-10-4.488282-10-10 0-5.515625 4.484376-10 10-10 5.511719 0 10 4.484375 10 10 0 5.511718-4.488281 10-10 10zm0 0"/>

@@ -14,6 +14,8 @@ const Login = () => {
     const connectToSymfony = e => {
         e.preventDefault();
 
+        console.log("lol");
+
         fetch('http://127.0.0.1:8000/users/login', {
             method: "POST",
             headers: {

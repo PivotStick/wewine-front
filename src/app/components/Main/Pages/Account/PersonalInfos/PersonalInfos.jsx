@@ -100,7 +100,7 @@ const PersonalInfos = ({ changeTab }) => {
 
                                 onClick={_ => setIsDModalVisible(true)}
 
-                                id="btnDelete">Suprimer votre compte</motion.button>
+                                id="btnDelete">Supprimer votre compte</motion.button>
                         </div>
                     </div>
                     
