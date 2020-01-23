@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { pageTransition } from "../pageTransition";
 
 import fondPremiumOk from "../../../../../assets/fondPremiumOk.jpg";
+import Modal from "../Modal";
 
 const Home = () => {
+
+    const [isModalVisible, setIsModalVisible] = useState("");
 
     return (
         <motion.section
@@ -40,10 +43,31 @@ const Home = () => {
                     Tu pourras aussi suivre des Wenners et voir leur cave, pour t'inspirer dans tes futures achats. 
                 </p>
                 <motion.button 
-                whileHover={{ scale: 1.04, y:-8 }}
-                className="home-page__contact">Contacter nous</motion.button>
+                    whileHover={{ scale: 1.04, y:-8 }}
+                    className="home-page__contact" onClick={_ => setIsModalVisible(true)}>Contactez-nous
+                
+                </motion.button>
             </div>
             
+            <AnimatePresence>
+                {
+                    isModalVisible && <Modal content= {
+                    <form>
+                        <input type="text" name="Lastname" placeholder="Nom"/>
+                        <input type="text" name="FirstName" placeholder="Prénom"/>
+                        <input type="email" name="email" placeholder="Adresse mail"/>
+                        <input type="text" name="message-title" placeholder="Votre sujet"/> 
+                        <br/>
+                        <textarea name="message-content" id="" cols="50" rows="10" placeholder="Votre message"></textarea>
+                        <button onClick={_ => setIsModalVisible(false)}>Envoyer</button>
+                    </form>
+                    }
+                    handleCloseModal= {setIsModalVisible} 
+                    header="Contactez-Nous"
+                    />
+
+                }
+            </AnimatePresence>
             
         </motion.section>
     );

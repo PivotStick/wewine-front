@@ -89,6 +89,22 @@
                 }
                 
             }
+
+            .content__btn{
+                margin-top: 1rem;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .--btn {
+                cursor: pointer;
+                background-color: $wewine3;
+                color: white;
+                border: none;
+                border-radius: 2rem;
+                padding: .8rem;
+                letter-spacing: 1px;
+            }
         }
     }
 }

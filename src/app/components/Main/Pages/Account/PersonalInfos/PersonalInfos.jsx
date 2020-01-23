@@ -132,9 +132,9 @@ const PersonalInfos = ({ changeTab }) => {
                                     <p>Vous êtes sur le point de supprimer votre compte, vous perdez vos caves, mais aussi les bouteilles enregistrées dans celle-ci. Êtes-vous sur de vouloir continuer ?</p>
                                     <div className="content__btn">
                                         <Link to="/">
-                                            <button onClick={deleteUser}>Oui, supprimer mon compte</button>
+                                            <button className="--btn" onClick={deleteUser}>Oui, supprimer mon compte</button>
                                         </Link>
-                                        <button>Non, annuler</button>
+                                        <button className="--btn" onClick={_ => setIsDModalVisible(false)}>Non, annuler</button>
                                     </div>
                                 </div>
 

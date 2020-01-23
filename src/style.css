@@ -1324,6 +1324,25 @@ hr {
   width: 15rem;
 }
 
+.personal-tab .personal-card__section .content__btn {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.personal-tab .personal-card__section .--btn {
+  cursor: pointer;
+  background-color: #632624;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  padding: .8rem;
+  letter-spacing: 1px;
+}
+
 @media only screen and (max-width: 1300px) {
   .personal-tab {
     width: 100%;
